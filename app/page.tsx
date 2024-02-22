@@ -81,18 +81,23 @@ export default function Home() {
         
         {/* Button to trigger the OpenAI API call */}
 
-        <div className="text-center">
-        <input
-          type="text"
-          value={userPrompt}
-          onChange={(e) => setUserPrompt(e.target.value)}
-          placeholder="Enter your prompt for OpenAI"
-          className="mt-4 px-4 py-2 border rounded"
-        />
-        <button onClick={handleButtonClick} className="ml-2 px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300">
-          Send OpenAI Request
-        </button>
-      </div>
+      {/* Add a text area for user input */}
+      <textarea
+  className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 md:w-1/2 lg:w-1/3 h-32 p-4 text-base font-normal border-2 border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500"
+  placeholder="Enter your prompt here..."
+  value={userPrompt}
+  onChange={(e) => setUserPrompt(e.target.value)}
+></textarea>
+      
+      {/* Button to trigger the OpenAI API call, placed at the bottom right */}
+      <div className="fixed bottom-1 right-4">
+  <button
+    onClick={handleButtonClick}
+    className="w-48 px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300"
+  >
+    Send OpenAI Request
+  </button>
+</div>
       
       {/* This paragraph displays the API response */}
       <p className="mt-4">Response from OpenAI: {apiResponse}</p>
