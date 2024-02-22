@@ -6,20 +6,22 @@ import Image from 'next/image';
 
 export default function Home() {
   const [apiResponse, setApiResponse] = useState('');
+  const [userPrompt, setUserPrompt] = useState(''); // State to hold the user's prompt
 
-// Inside your Home component
-async function handleButtonClick() {
-  const response = await fetch('/api/openai', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // No need to send the prompt from the frontend
-  });
-  const data = await response.json();
-  setApiResponse(data.result);
-}
-
+  // Adjusted handleButtonClick to include the user's prompt
+  async function handleButtonClick() {
+    const response = await fetch('/api/openai', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        prompt: userPrompt, // Send the user's prompt in the request body
+      }),
+    });
+    const data = await response.json();
+    setApiResponse(data.result);
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -78,14 +80,25 @@ async function handleButtonClick() {
         </a>
         
         {/* Button to trigger the OpenAI API call */}
+
         <div className="text-center">
-          <button onClick={handleButtonClick} className="mt-4 px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300">
-            Send OpenAI Request
-          </button>
-          {/* This paragraph displays the API response */}
-          <p className="mt-4">Response from OpenAI: {apiResponse}</p>
-        </div>
+        <input
+          type="text"
+          value={userPrompt}
+          onChange={(e) => setUserPrompt(e.target.value)}
+          placeholder="Enter your prompt for OpenAI"
+          className="mt-4 px-4 py-2 border rounded"
+        />
+        <button onClick={handleButtonClick} className="ml-2 px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300">
+          Send OpenAI Request
+        </button>
       </div>
+      
+      {/* This paragraph displays the API response */}
+      <p className="mt-4">Response from OpenAI: {apiResponse}</p>
+
+        </div>
+
     </main>
   );
 }
