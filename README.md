@@ -1,4 +1,20 @@
 
+
+
+Server side, client side issue:
+https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#using-third-party-packages-and-providers
+
+
+
+
+
+______________________________
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -92,3 +108,44 @@ To create a web app that sends a user's prompt to the ChatGPT API, spell-checks 
 2. **Learn React Basics**: Since Next.js builds on React, understanding React's core concepts (components, state, props) will be crucial.
 3. **API Integration**: Practice making API requests from a React component or an API route in Next.js.
 4. **Handling User Input**: Create a form in your `page.tsx` that captures user input and learns how to manage form state in React.
+
+
+
+
+______________________________
+
+
+
+
+
+
+
+
+
+
+______________________________
+
+
+
+
+project-root/
+├── .next/
+│   └── types/
+│       └── ... (TypeScript type definitions, dynamically generated)
+├── node_modules/
+│   └── ... (Dependencies installed via npm or yarn)
+├── pages/
+│   └── page.tsx (Your React component for a specific page)
+├── public/
+│   └── favicon.ico (Icon displayed in the browser tab)
+├── styles/
+│   └── globals.css (Global CSS styles)
+├── next-env.d.ts (TypeScript declarations for Next.js)
+├── next.config.mjs (Next.js configuration file)
+├── package.json (Project metadata and dependencies)
+├── package-lock.json (Locked versions of dependencies)
+├── postcss.config.js (PostCSS configuration for processing CSS)
+├── README.md (Project documentation)
+├── tailwind.config.ts (Tailwind CSS configuration)
+├── tsconfig.json (TypeScript compiler configuration)
+└── layout.tsx (React component for layout, shared across pages)
