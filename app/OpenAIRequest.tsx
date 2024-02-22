@@ -4,13 +4,20 @@ const OpenAIRequest = () => {
   const [apiResponse, setApiResponse] = useState('');
 
   const handleButtonClick = async () => {
-    const response = await fetch('API_URL', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: "write two lines in french" }),
-    });
-    const data = await response.json();
-    setApiResponse(data.result);
+    try {
+      const response = await fetch('/api/openai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: "write two lines in french" }),
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setApiResponse(data.result);
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
   };
 
   return (
@@ -22,6 +29,7 @@ const OpenAIRequest = () => {
 };
 
 export default OpenAIRequest;
+
 
 /* 
 export default Page;
