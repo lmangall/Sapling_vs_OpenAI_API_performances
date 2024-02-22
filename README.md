@@ -1,6 +1,28 @@
 
 
 
+
+https://nextjs.org/learn/react-foundations
+https://github.com/openai/openai-node
+
+
+# Language API:
+
+- [Google Search Language API](https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)
+- [Elsa Speak API](https://elsaspeak.com/en/elsa-api/)
+- [Speechace API](https://metatext.io/apis/speechace#:~:text=Speechace%20API&text=Speechace%20is%20a%20Speech%20Recognition,and%20feedback%20to%20identify%20mispronunciations.)
+- [More APIs in Language Category](https://metatext.io/apis-list/language-Category)
+- [Speechace Documentation](https://docs.speechace.com/#intro)
+- [Speechace API Plans](https://www.speechace.com/speechace-api-plans/)
+- [Sapling AI API](https://sapling.ai/)
+
+
+______________________________
+
+
+
+
+
 Server side, client side issue:
 https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#using-third-party-packages-and-providers
 
