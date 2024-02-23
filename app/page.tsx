@@ -67,7 +67,7 @@ export default function Home() {
         </button>
 
         {/* Response */}
-        <p className="mt-4">Response from OpenAI: {apiResponse}</p>
+        <p className="mt-4">{apiResponse}</p>
       </div>
     </main>
   );
