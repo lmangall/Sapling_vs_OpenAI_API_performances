@@ -25,50 +25,41 @@ export default function Home() {
       }
       const data = await response.json();
       setApiResponse(data.result);
+      const correctedText = data.result; // Assuming the corrected text is in data.result
+      setUserPrompt(correctedText); // Update the state with the corrected text
     } catch (error) {
       console.error("Failed to fetch OpenAI response:", error);
       setApiResponse("Failed to fetch response.");
     }
   }
 
+ 
   return (
-    <main className="grid grid-template-rows: auto 1fr auto; min-h-full w-screen">
-
-      {/* Top elements */}
-      <div className="grid grid-cols-1 place-items-center">
-        {/* Your top elements content here */}
-        <p className="fixed left-0 top-0 flex s w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Et on y va
-        </p>
-      </div>
-{/* 
-      <div className="grid grid-cols-1 place-items-center">
-        <Image
-          // ... image properties ...
-        />
-      </div>
- */}
+    <div className="h-screen flex flex-col justify-center items-center">
+      <main className="grid grid-template-rows: auto 1fr auto; w-full">
       {/* Form, button, and response container */}
-      <div className="grid grid-cols-1 place-items-center w-[600px] mx-auto">
+      <div className="grid grid-cols-1 place-items-center mx-auto">
         {/* Form */}
-        <textarea
-          className="w-full p-4 text-base font-normal border-2 border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500 mb-4"
-          placeholder="Enter your prompt here..."
-          value={userPrompt}
-          onChange={(e) => setUserPrompt(e.target.value)}
-        />
+        <div className="flex flex-col"> <textarea
+            className="w-[500px] p-4 text-base font-normal border-2 border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-500 resize: none h-40" placeholder="Entrez la phrase à corriger..."
+            value={userPrompt}
+            onChange={(e) => setUserPrompt(e.target.value)}
+          />
 
-        {/* Button */}
-        <button
-          onClick={handleButtonClick}
-          className="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300"
-        >
-          Send OpenAI Request
-        </button>
+          {/* Button */}
+          <button
+            onClick={handleButtonClick}
+            className="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300 mt-4" >
+            Corriger (OpenAI)
+          </button>
+                  {/* Logo */}
 
-        {/* Response */}
-        <p className="mt-4">{apiResponse}</p>
+          <div className="flex justify-center bottom-0 mt-20">
+            <Image src="/logo.png" alt="Logo" width={80} height={80} />
+          </div>
+        </div>
       </div>
     </main>
+  </div>
   );
 }

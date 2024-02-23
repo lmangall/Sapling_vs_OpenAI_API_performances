@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   const { prompt } = req.body;
 
   // Modify the prompt to ask for grammatical or orthographic corrections
-  const correctionRequest = `Correct any grammatical or orthographic errors in the following text, return only the text: "${prompt}"`;
+  const correctionRequest = `Correct any grammatical or orthographic errors in the following text, return only the text, without quotes: "${prompt}"`;
 
   const messages = [{ role: 'user', content: correctionRequest }];
 
