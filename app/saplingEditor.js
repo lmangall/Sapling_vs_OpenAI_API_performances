@@ -1,5 +1,4 @@
 
-import React, { useEffect } from 'react';
 import { Sapling } from "@saplingai/sapling-js/observer";
 
 function SaplingEditor() {
