@@ -3,26 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Sapling } from "@saplingai/sapling-js/observer";
+import SaplingEditor from '../components/saplingEditor.js';
 
 export default function Home() {
   const [apiResponse, setApiResponse] = useState('');
   const [userPrompt, setUserPrompt] = useState('');
-  const [saplingResponse, setSaplingResponse] = useState('');
-
-  useEffect(() => {
-    Sapling.init({
-      key: process.env.NEXT_PUBLIC_SAPLING_API_KEY, // Replace <YOUR_API_KEY> with your actual Sapling API key
-      endpointHostname: 'https://api.sapling.ai',
-      editPathname: '/api/v1/edits',
-      statusBadge: true,
-      mode: 'dev',
-    });
-
-    const editor = document.getElementById('sapling-editor');
-    if (editor) {
-      Sapling.observe(editor);
-    }
-  }, []);
 
   async function handleOpenAIClick() {
     try {
@@ -112,16 +97,7 @@ export default function Home() {
           Some text to complement the button
         </p>
       </a>
-                  {typeof document !== 'undefined' && (
-              <div
-                id="sapling-editor"
-                sapling-ignore="true"
-                contentEditable="true"
-                className="w-[500px] p-4 text-base font-normal border-2 border-gray-300 rounded-lg shadow-sm focus:outline-none resize: none h-40"
-              >
-                Lets get started!
-              </div>
-            )}
+            <SaplingEditor />
             <button
               onClick={(e) => e.preventDefault()} // Prevents any action
               className="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300 mt-4">
@@ -129,7 +105,8 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+        </div>
+  
     );
   }
   
