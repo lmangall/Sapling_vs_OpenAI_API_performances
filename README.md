@@ -4,6 +4,10 @@
 
 
 
+The error you're encountering, ReferenceError: document is not defined, typically occurs in server-side environments like Next.js during the build or prerendering process where the document object is not available. This happens because Next.js attempts to execute your code in a Node.js environment, where browser-specific objects like document do not exist. Your SaplingEditor.js component directly uses document within the useEffect hook, which is causing the issue when Next.js tries to prerender the page.
+
+Why This Happens on Vercel and Not Locally
+The discrepancy between your local environment and Vercel deployment can be attributed to how Next.js prerendering works. Locally, your development environment might not strictly enforce SSR prerendering rules, or the environment differences could change how code is executed. When deploying to Vercel, Next.js statically prerenders pages by default, executing your component code in a Node.js environment where document is undefined.
 
 
 

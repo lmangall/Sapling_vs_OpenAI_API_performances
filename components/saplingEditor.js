@@ -1,15 +1,10 @@
-
 import React, { useEffect } from 'react';
 import { Sapling } from "@saplingai/sapling-js/observer";
-import ReactDOM from 'react-dom/client';
-
-
 
 function SaplingEditor() {
   useEffect(() => {
-    // Check if window is defined (i.e., in the browser)
-    if (typeof window !== "undefined") {
-      // Now we're safe to use window or document
+    // Ensure code runs only in the browser where 'document' is defined
+    if (typeof window !== 'undefined') {
       Sapling.init({
         key: process.env.NEXT_PUBLIC_SAPLING_API_KEY, // Replace with your API key
         endpointHostname: 'https://api.sapling.ai',
@@ -18,13 +13,14 @@ function SaplingEditor() {
         mode: 'prod',
         lang: "fr",
       });
-  
+
       const editor = document.getElementById('sapling-editor');
       if (editor) {
         Sapling.observe(editor);
       }
     }
   }, []);
+
   return (
     <div
       id="sapling-editor"
@@ -37,4 +33,3 @@ function SaplingEditor() {
 }
 
 export default SaplingEditor;
-
