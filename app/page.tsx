@@ -118,7 +118,6 @@ export default function Home() {
                 sapling-ignore="true"
                 contentEditable="true"
                 className="w-[500px] p-4 text-base font-normal border-2 border-gray-300 rounded-lg shadow-sm focus:outline-none resize: none h-40"
-                placeholder="Start typing here to correct with Sapling..."
               >
                 Lets get started!
               </div>
