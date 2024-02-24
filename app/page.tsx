@@ -4,6 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Sapling } from "@saplingai/sapling-js/observer";
 import SaplingEditor from '../components/saplingEditor.js';
+import dynamic from 'next/dynamic';
+
+const SaplingEditorWithNoSSR = dynamic(() => import('../components/saplingEditor.js'), {
+  ssr: false,
+});
 
 export default function Home() {
   const [apiResponse, setApiResponse] = useState('');
