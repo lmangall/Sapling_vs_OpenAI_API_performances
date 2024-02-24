@@ -5,11 +5,11 @@ function SaplingEditor() {
   useEffect(() => {
     // Ensure code runs only in the browser where 'document' is defined
       Sapling.init({
-        key: process.env.NEXT_PUBLIC_SAPLING_API_KEY, // Replace with your API key
+        key: process.env.SAPLING_API_KEY, // Replace with your API key
         endpointHostname: 'https://api.sapling.ai',
         editPathname: '/api/v1/edits',
         statusBadge: true,
-        mode: 'dev',
+        mode: 'prod',
       });
 
       const editor = document.getElementById('sapling-editor');

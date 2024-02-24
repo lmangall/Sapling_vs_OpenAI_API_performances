@@ -6,6 +6,19 @@ import { Sapling } from "@saplingai/sapling-js/observer";
 import SaplingEditor from '../components/saplingEditor.js';
 import dynamic from 'next/dynamic';
 
+
+/* 
+use dynamic imports  with the { ssr: false } I am tellig next.js to:
+Load the Component Client-Side Only
+Bypass Server-Side Execution: bypasses issues related to the use of browser-specific objects like document.
+
+SaplingEditor component likely interacts with the DOM or uses browser APIs (such as document.getElementById) 
+which are not available in a Node.js environment where Next.js performs server-side rendering.
+This was causing the ReferenceError: document is not defined
+
+with { ssr: false }, I deferred the loading and rendering of SaplingEditor 
+until after the page has been delivered to the browser. 
+ */
 const SaplingEditorWithNoSSR = dynamic(
   () => import('../components/saplingEditor'),
   { ssr: false }
