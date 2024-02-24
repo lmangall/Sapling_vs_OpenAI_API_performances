@@ -1,18 +1,18 @@
+
 import React, { useEffect } from 'react';
 import { Sapling } from "@saplingai/sapling-js/observer";
 
 function SaplingEditor() {
   useEffect(() => {
-    // Sapling initialization within useEffect
+    // Sapling initialization code here, access document object safely
     Sapling.init({
-      key: process.env.NEXT_PUBLIC_SAPLING_API_KEY,
+      key: process.env.NEXT_PUBLIC_SAPLING_API_KEY, // Replace with your API key
       endpointHostname: 'https://api.sapling.ai',
       editPathname: '/api/v1/edits',
       statusBadge: true,
       mode: 'prod',
     });
 
-    // Access and observe editor element
     const editor = document.getElementById('sapling-editor');
     if (editor) {
       Sapling.observe(editor);
