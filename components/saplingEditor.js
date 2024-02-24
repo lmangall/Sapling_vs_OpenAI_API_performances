@@ -9,7 +9,7 @@ function SaplingEditor() {
         endpointHostname: 'https://api.sapling.ai',
         editPathname: '/api/v1/edits',
         statusBadge: true,
-        mode: 'prod',
+        mode: 'dev',
       });
 
       const editor = document.getElementById('sapling-editor');
