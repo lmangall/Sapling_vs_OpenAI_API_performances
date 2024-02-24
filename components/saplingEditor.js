@@ -3,24 +3,28 @@ import React, { useEffect } from 'react';
 import { Sapling } from "@saplingai/sapling-js/observer";
 import ReactDOM from 'react-dom/client';
 
+
+
 function SaplingEditor() {
   useEffect(() => {
-    // Sapling initialization code here, access document object safely
-    Sapling.init({
-      key: process.env.NEXT_PUBLIC_SAPLING_API_KEY, // Replace with your API key
-      endpointHostname: 'https://api.sapling.ai',
-      editPathname: '/api/v1/edits',
-      statusBadge: true,
-      mode: 'prod',
-      lang : "fr",
-    });
-
-    const editor = document.getElementById('sapling-editor');
-    if (editor) {
-      Sapling.observe(editor);
+    // Check if window is defined (i.e., in the browser)
+    if (typeof window !== "undefined") {
+      // Now we're safe to use window or document
+      Sapling.init({
+        key: process.env.NEXT_PUBLIC_SAPLING_API_KEY, // Replace with your API key
+        endpointHostname: 'https://api.sapling.ai',
+        editPathname: '/api/v1/edits',
+        statusBadge: true,
+        mode: 'prod',
+        lang: "fr",
+      });
+  
+      const editor = document.getElementById('sapling-editor');
+      if (editor) {
+        Sapling.observe(editor);
+      }
     }
   }, []);
-
   return (
     <div
       id="sapling-editor"
@@ -33,3 +37,4 @@ function SaplingEditor() {
 }
 
 export default SaplingEditor;
+

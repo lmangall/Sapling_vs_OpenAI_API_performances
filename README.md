@@ -1,6 +1,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+____________________________
+
+
+
 Implement Azure Cognitive Service for Language: Setting Up Bing Spell Check API | packtpub.com:
 https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt
 https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md
