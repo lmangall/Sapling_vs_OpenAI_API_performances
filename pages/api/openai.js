@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   You will be provided with statements, and your task is to convert them to standard English
   from : https://platform.openai.com/examples/default-grammar
    */
-  const correctionRequest = `Correct any grammatical or orthographic errors in the following text, return only the text, without quotes: "${prompt}"`;
+  const correctionRequest = `You will be provided with statements, and your task is to convert them to standard French (answer only the corrected text): "${prompt}"`;
 
   const messages = [{ role: 'user', content: correctionRequest }];
 
