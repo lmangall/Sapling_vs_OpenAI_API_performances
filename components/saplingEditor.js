@@ -10,6 +10,7 @@ function SaplingEditor() {
         editPathname: '/api/v1/edits',
         statusBadge: true,
         mode: 'dev',
+        lang: 'fr',
       });
 
       const editor = document.getElementById('sapling-editor');
