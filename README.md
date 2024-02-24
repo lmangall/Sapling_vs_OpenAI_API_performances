@@ -16,8 +16,7 @@ The discrepancy between your local environment and Vercel deployment can be attr
 
 
 
-
-
+tree -I 'node_modules' -L 2              
 
 
 

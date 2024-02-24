@@ -4,6 +4,12 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Sapling } from "@saplingai/sapling-js/observer";
 import SaplingEditor from '../components/saplingEditor.js';
+import dynamic from 'next/dynamic';
+
+const SaplingEditorWithNoSSR = dynamic(
+  () => import('../components/saplingEditor'),
+  { ssr: false }
+);
 
 export default function Home() {
   const [apiResponse, setApiResponse] = useState('');
@@ -97,7 +103,7 @@ export default function Home() {
           Some text to complement the button
         </p>
       </a>
-            <SaplingEditor />
+      <SaplingEditorWithNoSSR />
             <button
               onClick={(e) => e.preventDefault()} // Prevents any action
               className="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition duration-300 mt-4">
