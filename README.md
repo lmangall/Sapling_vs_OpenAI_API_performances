@@ -1,27 +1,29 @@
 ## Language APIs Resources:
 
+## Language APIs Resources:
+
 **Links for API related to languages:**
 
 - **Azure Cognitive Services for Language (Bing Spell Check API):**
-  - Tutorial video: [https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt](https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt)
-  - Documentation: [https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md](https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md)
-- **OpenAI Grammar Example:** [https://platform.openai.com/examples/default-grammar](https://platform.openai.com/examples/default-grammar)
-- **Next.js React Foundations:** [https://nextjs.org/learn/react-foundations](https://nextjs.org/learn/react-foundations)
-- **OpenAI Node.js Library:** [https://github.com/openai/openai-node](https://github.com/openai/openai-node)
+  - Tutorial video: [Packt tutorial on Bing Spell Check API](https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt)
+  - Documentation: [Microsoft Docs: Sending requests to Bing Spell Check API](https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md)
+- **OpenAI Grammar Example:** [OpenAI API example for correcting grammar](https://platform.openai.com/examples/default-grammar)
+- **Next.js React Foundations:** [Learn the fundamentals of React with Next.js](https://nextjs.org/learn/react-foundations)
+- **OpenAI Node.js Library:** [Interact with OpenAI API using Node.js](https://github.com/openai/openai-node)
 
 **Language APIs:**
 
-- **Google Search Language API:** [https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8](https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)
-- **Elsa Speak API:** [https://elsaspeak.com/en/elsa-api/](https://elsaspeak.com/en/elsa-api/)
+- **Google Search Language API:** [Explore various language understanding features](https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)
+- **Elsa Speak API:** [Improve pronunciation with Elsa Speak API](https://elsaspeak.com/en/elsa-api/)
 - **Speechace API (Speech recognition, text-to-speech, and pronunciation feedback):**
-  - Documentation: [https://docs.speechace.com/#intro](https://docs.speechace.com/#intro)
-  - Plans: [https://www.speechace.com/speechace-api-plans/](https://www.speechace.com/speechace-api-plans/)
-- **More APIs in Language Category:** [https://metatext.io/apis-list/language-Category](https://metatext.io/apis-list/language-Category)
-- **Sapling AI API:** [https://sapling.ai/](https://sapling.ai/)
+  - Documentation: [Speechace API documentation](https://docs.speechace.com/#intro)
+  - Plans: [Speechace API pricing](https://www.speechace.com/speechace-api-plans/)
+- **More APIs in Language Category:** [Discover more language APIs on MetaText](https://metatext.io/apis-list/language-Category)
+- **Sapling AI API:** [Enhance writing fluency with Sapling AI API](https://sapling.ai/)
 
 **Additional Notes:**
 
-- Consider adding brief descriptions of each API and its features for better usability.
+- Consider adding brief descriptions of each API and its features to enhance usability.
 - Categorize APIs based on functionalities (e.g., grammar correction, pronunciation checking) for specific use cases.
 
 # Understanding the Code and Technologies
