@@ -53,7 +53,7 @@ export default function Home() {
   const Logo = () => (
     <a href="https://frenchezleo.com" target="_blank" rel="noopener noreferrer">
       <Image
-        src="../public/logo.svg" // Update path if needed
+        src="/public/logo.svg"
         alt="Frenchez Leo Logo"
         width={50} // Adjust width as needed
         height={25} // Adjust height as needed
