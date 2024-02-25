@@ -6,23 +6,32 @@
   - Tutorial video: [Packt tutorial on Bing Spell Check API](https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt)
   - Documentation: [Microsoft Docs: Sending requests to Bing Spell Check API](https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md)
 - **OpenAI Grammar Example:** [OpenAI API example for correcting grammar](https://platform.openai.com/examples/default-grammar)
-- **Next.js React Foundations:** [Learn the fundamentals of React with Next.js](https://nextjs.org/learn/react-foundations)
 - **OpenAI Node.js Library:** [Interact with OpenAI API using Node.js](https://github.com/openai/openai-node)
 
-**Language APIs:**
+**Pronunciation assesment APIs:**
+_(for further development)_
 
-- **Google Search Language API:** [Explore various language understanding features](https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)
-- **Elsa Speak API:** [Improve pronunciation with Elsa Speak API](https://elsaspeak.com/en/elsa-api/)
-- **Speechace API (Speech recognition, text-to-speech, and pronunciation feedback):**
-  - Documentation: [Speechace API documentation](https://docs.speechace.com/#intro)
-  - Plans: [Speechace API pricing](https://www.speechace.com/speechace-api-plans/)
-- **More APIs in Language Category:** [Discover more language APIs on MetaText](https://metatext.io/apis-list/language-Category)
-- **Sapling AI API:** [Enhance writing fluency with Sapling AI API](https://sapling.ai/)
+Defined.ai:
+[Defined.ai Public API](https://developers.definedcrowd.com/#)
 
-**Additional Notes:**
+confidence:
+[Language Confidence](https://languageconfidence.ai/#how-does-our) only english and chinese, no info on pricing
 
-- Consider adding brief descriptions of each API and its features to enhance usability.
-- Categorize APIs based on functionalities (e.g., grammar correction, pronunciation checking) for specific use cases.
+Speechsuper:
+[SpeechSuper](https://www.speechsuper.com/) infos, GitHub, 20USD+ per month
+
+Microsoft Azure pronunciation assesment:
+[Pronunciation assessment in Azure Speech Services](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-pronunciation-assessment?pivots=programming-language-csharp) 480$ per month ?
+
+Speechcase:
+[Speechace API plans](https://www.speechace.com/speechace-api-plans/) 80$/month
+
+Elsa:
+[ELSA](https://elsaspeak.com/en/elsa-api/) english only
+
+**Coding ressources:**
+
+- **Next.js React Foundations:** [Learn the fundamentals of React with Next.js](https://nextjs.org/learn/react-foundations)
 
 # Understanding the Code and Technologies
 
@@ -46,7 +55,9 @@ This project utilizes several web development technologies to create a web appli
 # Project Structure
 
 ```bash
-Use code with caution.
+
+tree -I 'node_modules' -L 2
+
 project-root/
 ├── .next/ (Next.js build output)
 ├── node_modules/ (Installed dependencies)
@@ -66,7 +77,7 @@ project-root/
 └── layout.tsx (Layout component shared across pages)
 ```
 
-# Project Structure
+# Details:
 
 | File/Directory       | Description                                           |
 | -------------------- | ----------------------------------------------------- |
@@ -151,7 +162,3 @@ https://nextjs.org/docs/pages/building-your-application/rendering
 - **Audience-specific detail:** Adapt the explanation's technical level based on your target audience.
 
 **I hope this explanation in code block format is helpful! Feel free to ask further questions.**
-
-# Usefull command
-
-tree -I 'node_modules' -L 2
