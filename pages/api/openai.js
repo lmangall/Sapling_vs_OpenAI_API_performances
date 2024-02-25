@@ -1,38 +1,52 @@
-export default async function handler(req, res) {
+// Function to handle correction requests
+export default async function handleCorrectionRequest(req, res) {
   // Extract the prompt from the request body
-  const { prompt } = req.body;
+  const userPrompt = req.body.prompt; // Use a descriptive name
 
-  // Modify the prompt to ask for grammatical or orthographic corrections
-  /* 
-  You will be provided with statements, and your task is to convert them to standard English
-  from : https://platform.openai.com/examples/default-grammar
-   */
-  const correctionRequest = `You will be provided with statements, and your task is to convert them to standard French (answer only the corrected text): "${prompt}"`;
+  // Prepare the correction request for OpenAI
+  const correctionRequest = `Correct the following text to standard French, preserving the original intent: "${userPrompt}"`;
 
-  const messages = [{ role: 'user', content: correctionRequest }];
+  // Create the initial message for OpenAI
+  const messages = [{ role: "user", content: correctionRequest }];
 
   try {
+    // Call OpenAI API with the prepared message
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, // Use environment variable for security
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: "gpt-3.5-turbo", // Consider exploring other models for French correction
         messages: messages,
       }),
     });
-    
-    const data = await response.json();
 
-    if (data.choices && data.choices.length > 0) {
-      res.status(200).json({ result: data.choices[0].message.content });
+    // Check for successful response
+    if (response.ok) {
+      const data = await response.json();
+
+      // Extract the corrected text from the response
+      if (data.choices && data.choices.length > 0) {
+        const correctedText = data.choices[0].message.content;
+        res.status(200).json({ result: correctedText }); // Return only the corrected text
+      } else {
+        res.status(404).json({ error: "No correction found from OpenAI." });
+      }
     } else {
-      res.status(404).json({ error: "No completion found." });
+      // Handle API errors gracefully
+      const error = await response.text(); // Get the error message
+      console.error("Error calling OpenAI API:", error);
+      res
+        .status(500)
+        .json({ error: "An error occurred while processing your request." });
     }
   } catch (error) {
-    console.error("Error calling OpenAI API:", error);
-    res.status(500).json({ error: "An error occurred while processing your request." });
+    // Log and handle other errors
+    console.error("Error:", error);
+    res
+      .status(500)
+      .json({ error: "An internal error occurred. Please try again later." });
   }
 }

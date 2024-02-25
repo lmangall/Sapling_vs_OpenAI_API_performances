@@ -1,206 +1,190 @@
-
-
-
-
-
-
-The error you're encountering, ReferenceError: document is not defined, typically occurs in server-side environments like Next.js during the build or prerendering process where the document object is not available. This happens because Next.js attempts to execute your code in a Node.js environment, where browser-specific objects like document do not exist. Your SaplingEditor.js component directly uses document within the useEffect hook, which is causing the issue when Next.js tries to prerender the page.
-
-Why This Happens on Vercel and Not Locally
-The discrepancy between your local environment and Vercel deployment can be attributed to how Next.js prerendering works. Locally, your development environment might not strictly enforce SSR prerendering rules, or the environment differences could change how code is executed. When deploying to Vercel, Next.js statically prerenders pages by default, executing your component code in a Node.js environment where document is undefined.
-
-
-
-
-
-
-
-
-tree -I 'node_modules' -L 2              
-
-
-
-
-
-____________________________
-
-
-
-Implement Azure Cognitive Service for Language: Setting Up Bing Spell Check API | packtpub.com:
-https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt
-https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md
-
-
-OpenAi has an example just for that:
-https://platform.openai.com/examples/default-grammar
-
-
-https://nextjs.org/learn/react-foundations
-https://github.com/openai/openai-node
-
-
-# Language API:
-
-- [Google Search Language API](https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)
-- [Elsa Speak API](https://elsaspeak.com/en/elsa-api/)
-- [Speechace API](https://metatext.io/apis/speechace#:~:text=Speechace%20API&text=Speechace%20is%20a%20Speech%20Recognition,and%20feedback%20to%20identify%20mispronunciations.)
-- [More APIs in Language Category](https://metatext.io/apis-list/language-Category)
-- [Speechace Documentation](https://docs.speechace.com/#intro)
-- [Speechace API Plans](https://www.speechace.com/speechace-api-plans/)
-- [Sapling AI API](https://sapling.ai/)
-
-
-______________________________
-
-
-
-
-
-Server side, client side issue:
-https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#using-third-party-packages-and-providers
-
-
-
-
-
-______________________________
-
-
-
-
-
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-update.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-
-
-
-______________________________
-
-
-
-
-
-
-
-
-
-
-______________________________
-
-
+## Language APIs Resources:
+
+**Links for API related to languages:**
+
+- **Azure Cognitive Services for Language (Bing Spell Check API):**
+  - Tutorial video: [https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt](https://www.youtube.com/watch?v=-zuqfJaxT8A&ab_channel=Packt)
+  - Documentation: [https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md](https://github.com/MicrosoftDocs/bing-docs/blob/main/bing-docs/bing-spell-check/how-to/sending-requests.md)
+- **OpenAI Grammar Example:** [https://platform.openai.com/examples/default-grammar](https://platform.openai.com/examples/default-grammar)
+- **Next.js React Foundations:** [https://nextjs.org/learn/react-foundations](https://nextjs.org/learn/react-foundations)
+- **OpenAI Node.js Library:** [https://github.com/openai/openai-node](https://github.com/openai/openai-node)
+
+**Language APIs:**
+
+- **Google Search Language API:** [https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8](https://www.google.com/search?q=api+to+detect+mispronunciation&rlz=1C5CHFA_enDE1081DE1081&oq=api+to+detect+mispronunciation&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCTEwNjM4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8)
+- **Elsa Speak API:** [https://elsaspeak.com/en/elsa-api/](https://elsaspeak.com/en/elsa-api/)
+- **Speechace API (Speech recognition, text-to-speech, and pronunciation feedback):**
+  - Documentation: [https://docs.speechace.com/#intro](https://docs.speechace.com/#intro)
+  - Plans: [https://www.speechace.com/speechace-api-plans/](https://www.speechace.com/speechace-api-plans/)
+- **More APIs in Language Category:** [https://metatext.io/apis-list/language-Category](https://metatext.io/apis-list/language-Category)
+- **Sapling AI API:** [https://sapling.ai/](https://sapling.ai/)
+
+**Additional Notes:**
+
+- Consider adding brief descriptions of each API and its features for better usability.
+- Categorize APIs based on functionalities (e.g., grammar correction, pronunciation checking) for specific use cases.
 
 # Understanding the Code and Technologies
 
-## Next.js
-It's a React framework that enables server-side rendering and generating static websites for React-based web applications. It simplifies the process of building a fast and scalable web application.
+This project utilizes several web development technologies to create a web application that interacts with the ChatGPT API:
 
-## React
-A JavaScript library for building user interfaces. It lets you create reusable UI components.
+- **Next.js:** A React framework for building server-side rendered and static web applications.
+- **React:** A JavaScript library for creating reusable UI components.
+- **TypeScript:** A superset of JavaScript that adds static typing for improved code robustness.
+- **CSS:** Cascading Style Sheets for styling web page elements.
+- **Tailwind CSS:** A utility-first CSS framework for rapid design creation.
+- **PostCSS:** A tool for transforming CSS with JavaScript (used for Tailwind processing).
+- **API:** Application Programming Interface, enabling communication between different parts of an application (here, interacting with ChatGPT).
 
-## TypeScript
-A superset of JavaScript that adds static types. TypeScript is used for writing more robust code and is compiled down to JavaScript.
+# Component Dependencies
 
-## CSS
-Cascading Style Sheets, used for styling web pages.
+- `page.tsx` and `layout.tsx`: React components defining page content and layout, respectively.
+- `globals.css` and `tailwind.config.ts`: Global styles and Tailwind configuration.
+- `next.config.mjs`: Next.js application configuration.
+- `tsconfig.json`: TypeScript compiler configuration.
 
-## Tailwind CSS
-A utility-first CSS framework for rapidly building custom designs. Tailwind uses utility classes to style elements directly in your markup.
+# Project Structure
 
-## PostCSS
-A tool for transforming CSS with JavaScript, used here for processing Tailwind CSS.
-
-## API
-Application Programming Interface, a way for different parts of an application to communicate with each other. In your case, you'll be interacting with the ChatGPT API.
-
-## Component Dependencies
-- **page.tsx** and **layout.tsx**: These are React components. `layout.tsx` can be used to define a common layout (header, footer, etc.) that wraps around your main page content in `page.tsx`. The `page.tsx` component depends on `layout.tsx` if you use the layout as a wrapper.
-- **globals.css** and **tailwind.config.ts**: Your global styles and Tailwind configuration will determine the look and feel of your app. `globals.css` can include base styles, and Tailwind's config file lets you customize the framework's default settings.
-- **next.config.mjs**: This configuration file affects the overall behavior of your Next.js application, such as redirects, rewrites, and environment variables.
-- **tsconfig.json**: Affects how TypeScript is compiled in your project. It doesn't have a direct dependency on your components but ensures your TypeScript code is compiled correctly.
-
-## Adapting for Your Goal
-To create a web app that sends a user's prompt to the ChatGPT API, spell-checks the text, and displays the corrected text with changes highlighted, you'll need to focus on the following:
-
-### Frontend:
-- A form in your `page.tsx` component where users can submit their prompts.
-- Displaying the corrected text with changes highlighted. This will involve state management within your React component to handle the submission and display of data.
-
-### API Request:
-- You'll need to make an API request to the ChatGPT API with the user's prompt. This can be done using JavaScript's fetch API or libraries like Axios. You might handle this in your `page.tsx` or create a separate API route in Next.js (in the `pages/api` directory) to manage the request.
-
-### Highlighting Changes:
-- To highlight changes, you'll need to compare the original text with the corrected text and use HTML and CSS to style the differences.
-
-### Back-End (Optional):
-- If you're processing the text or handling sensitive API keys, you might use Next.js API routes (`pages/api`) to keep certain logic server-side.
-
-## Next Steps
-1. **Understand Each File**: Start by familiarizing yourself with each component and configuration file. Modify simple things, like styles in `globals.css`, to see immediate effects.
-2. **Learn React Basics**: Since Next.js builds on React, understanding React's core concepts (components, state, props) will be crucial.
-3. **API Integration**: Practice making API requests from a React component or an API route in Next.js.
-4. **Handling User Input**: Create a form in your `page.tsx` that captures user input and learns how to manage form state in React.
-
-
-
-
-______________________________
-
-
-
-
-
-
-
-
-
-
-______________________________
-
-
-
-
+```bash
+Use code with caution.
 project-root/
-├── .next/
-│   └── types/
-│       └── ... (TypeScript type definitions, dynamically generated)
-├── node_modules/
-│   └── ... (Dependencies installed via npm or yarn)
-├── pages/
-│   └── page.tsx (Your React component for a specific page)
-├── public/
-│   └── favicon.ico (Icon displayed in the browser tab)
-├── styles/
-│   └── globals.css (Global CSS styles)
+├── .next/ (Next.js build output)
+├── node_modules/ (Installed dependencies)
+├── pages/ (React components for pages)
+│   └── page.tsx (Main page component)
+├── public/ (Static assets, e.g., favicon)
+├── styles/ (CSS styles)
+│   └── globals.css (Global styles)
 ├── next-env.d.ts (TypeScript declarations for Next.js)
-├── next.config.mjs (Next.js configuration file)
-├── package.json (Project metadata and dependencies)
-├── package-lock.json (Locked versions of dependencies)
-├── postcss.config.js (PostCSS configuration for processing CSS)
+├── next.config.mjs (Next.js configuration)
+├── package.json (Project metadata)
+├── package-lock.json (Dependency lock file)
+├── postcss.config.js (PostCSS configuration)
 ├── README.md (Project documentation)
-├── tailwind.config.ts (Tailwind CSS configuration)
-├── tsconfig.json (TypeScript compiler configuration)
-└── layout.tsx (React component for layout, shared across pages)
+├── tailwind.config.ts (Tailwind configuration)
+├── tsconfig.json (TypeScript configuration)
+└── layout.tsx (Layout component shared across pages)
+```
+
+# Project Structure
+
+Use code with caution.
+
+project-root/ # Root directory of the project
+├── .next/ # Contains generated build output from Next.js (not committed to version control)
+├── node_modules/ # Contains installed third-party dependencies (not committed to version control)
+├── pages/ # Contains React components representing individual pages
+│ └── page.tsx # The main page component of the application
+├── public/ # Contains static assets like favicon, images, etc.
+│ └── favicon.ico # The website's favicon
+├── styles/ # Contains CSS styles for the application
+│ └── globals.css # Global styles applied to the entire application
+├── next-env.d.ts # Provides TypeScript declarations for Next.js environment variables
+├── next.config.mjs # Configuration file for Next.js settings
+├── package.json # Contains project metadata, dependencies, and scripts
+├── package-lock.json # Lock file for package versions (not committed to version control)
+├── postcss.config.js # Configuration file for PostCSS plugins
+├── README.md # Project documentation file
+├── tailwind.config.ts # Configuration file for Tailwind CSS
+├── tsconfig.json # Configuration file for TypeScript
+└── layout.tsx # Shared layout component used across multiple pages
+
+| File/Directory       | Description                                           |
+| -------------------- | ----------------------------------------------------- |
+| `.next/`             | Contains generated build output from Next.js          |
+| `node_modules/`      | Contains installed third-party dependencies           |
+| `pages/`             | Contains React components for individual pages        |
+| `pages/page.tsx`     | The main page component of the application            |
+| `public/`            | Contains static assets like favicon, images, etc.     |
+| `public/favicon.ico` | The website's favicon                                 |
+| `styles/`            | Contains CSS styles for the application               |
+| `styles/globals.css` | Global styles applied to the entire application       |
+| `next-env.d.ts`      | Provides TypeScript declarations for Next.js env vars |
+| `next.config.mjs`    | Configuration file for Next.js settings               |
+| `package.json`       | Contains project metadata, dependencies, and scripts  |
+| `package-lock.json`  | Lock file for package versions                        |
+| `postcss.config.js`  | Configuration file for PostCSS plugins                |
+| `README.md`          | Project documentation file                            |
+| `tailwind.config.ts` | Configuration file for Tailwind CSS                   |
+| `tsconfig.json`      | Configuration file for TypeScript                     |
+| `layout.tsx`         | Shared layout component used across multiple pages    |
+
+## Server-Side Rendering Issues and Solutions
+
+**Encountered Problems:**
+
+- **Error:** `ReferenceError: document is not defined`
+- **Context:** Server-side rendering (SSR) in Next.js
+- **Component:** `SaplingEditor.js` using `document` object within `useEffect` hook
+
+**Explanation:**
+
+- The `document` object belongs to the Document Object Model (DOM), not available in Node.js environments used for Next.js SSR.
+- `SaplingEditor.js` accessing `document` during SSR leads to the error.
+
+**Difference Between Local and Vercel:**
+
+- Local development might have relaxed SSR rules, allowing code execution despite missing `document`.
+- Vercel enforces strict SSR, causing the error when `document` is unavailable.
+
+**Solution: Dynamic Imports with `ssr: false`**
+
+1. Use dynamic imports:
+
+   ```javascript
+   const SaplingEditorWithNoSSR = dynamic(
+     () => import("../components/saplingEditor"),
+     { ssr: false }
+   );
+   ```
+
+2. ssr: false tells Next.js to:
+   Load SaplingEditor only on the client-side.
+   Bypass SSR for this component, avoiding issues with document.
+   Benefits:
+
+- Prevents document error during SSR.
+- Improves performance by loading SaplingEditor only when needed.
+
+_Remember:_
+
+Adjust the level of detail and technical jargon based on your audience.
+
+**Solution Breakdown:**
+
+**What `ssr: false` tells Next.js:**
+
+- **Load `SaplingEditor` only on the client-side:**
+  - This means the component code won't be executed during server-side rendering (SSR).
+  - It will only be loaded and executed when the browser receives the rendered HTML.
+- **Bypass SSR for this component:**
+  - This avoids the `ReferenceError: document is not defined` because `document` is a browser-specific object unavailable during SSR.
+
+**Benefits:**
+
+- **Prevents `document` error:**
+  - By not executing `SaplingEditor` on the server, it can't access `document`, eliminating the error.
+- **Improves performance:**
+  - Loading `SaplingEditor` only when needed reduces the initial page load weight on the server.
+
+**Remember:**
+
+- **Audience-specific detail:** Adapt the explanation's technical level based on your target audience.
+
+**I hope this explanation in code block format is helpful! Feel free to ask further questions.**
+
+# Usefull command
+
+tree -I 'node_modules' -L 2
+
+# useful links:
+
+https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts#pre-rendering
+
+**Error:**
+
+- **The `document` object is part of the DOM (Document Object Model), representing the entire HTML document and allowing JavaScript to interact with it.**
+- **The error `ReferenceError: document is not defined` often occurs in server-side environments like Next.js during build/prerendering when the `document` object isn't available.**
+- **This happens because Next.js executes code in a Node.js environment (without browser-specific objects like `document`).**
+- **The `SaplingEditor.js` component's use of `document` within `useEffect` causes the error during prerendering.**
+- **The error might not occur locally due to relaxed SSR rules, but Vercel enforces strict prerendering, leading to the error.**

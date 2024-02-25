@@ -21,3 +21,16 @@
     text-wrap: balance;
   }
 }
+
+.project-description-container {
+  max-width: 600px; /* Adjust as needed */
+  margin-bottom: 60px; /* Adjust as needed */
+}
+
+.enhancement-list li {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  margin-left: 20px; /* Indent each list item */
+}
+
