@@ -1,7 +1,5 @@
 ## Language APIs Resources:
 
-## Language APIs Resources:
-
 **Links for API related to languages:**
 
 - **Azure Cognitive Services for Language (Bing Spell Check API):**
@@ -70,27 +68,6 @@ project-root/
 
 # Project Structure
 
-Use code with caution.
-
-project-root/ # Root directory of the project
-├── .next/ # Contains generated build output from Next.js (not committed to version control)
-├── node_modules/ # Contains installed third-party dependencies (not committed to version control)
-├── pages/ # Contains React components representing individual pages
-│ └── page.tsx # The main page component of the application
-├── public/ # Contains static assets like favicon, images, etc.
-│ └── favicon.ico # The website's favicon
-├── styles/ # Contains CSS styles for the application
-│ └── globals.css # Global styles applied to the entire application
-├── next-env.d.ts # Provides TypeScript declarations for Next.js environment variables
-├── next.config.mjs # Configuration file for Next.js settings
-├── package.json # Contains project metadata, dependencies, and scripts
-├── package-lock.json # Lock file for package versions (not committed to version control)
-├── postcss.config.js # Configuration file for PostCSS plugins
-├── README.md # Project documentation file
-├── tailwind.config.ts # Configuration file for Tailwind CSS
-├── tsconfig.json # Configuration file for TypeScript
-└── layout.tsx # Shared layout component used across multiple pages
-
 | File/Directory       | Description                                           |
 | -------------------- | ----------------------------------------------------- |
 | `.next/`             | Contains generated build output from Next.js          |
@@ -148,9 +125,9 @@ project-root/ # Root directory of the project
 - Prevents document error during SSR.
 - Improves performance by loading SaplingEditor only when needed.
 
-_Remember:_
+**useful links:**
 
-Adjust the level of detail and technical jargon based on your audience.
+https://nextjs.org/docs/pages/building-your-application/rendering
 
 **Solution Breakdown:**
 
@@ -178,15 +155,3 @@ Adjust the level of detail and technical jargon based on your audience.
 # Usefull command
 
 tree -I 'node_modules' -L 2
-
-# useful links:
-
-https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts#pre-rendering
-
-**Error:**
-
-- **The `document` object is part of the DOM (Document Object Model), representing the entire HTML document and allowing JavaScript to interact with it.**
-- **The error `ReferenceError: document is not defined` often occurs in server-side environments like Next.js during build/prerendering when the `document` object isn't available.**
-- **This happens because Next.js executes code in a Node.js environment (without browser-specific objects like `document`).**
-- **The `SaplingEditor.js` component's use of `document` within `useEffect` causes the error during prerendering.**
-- **The error might not occur locally due to relaxed SSR rules, but Vercel enforces strict prerendering, leading to the error.**

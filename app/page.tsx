@@ -75,6 +75,7 @@ export default function Home() {
             <li>- Click for word definition</li>
             <li>- Correction explanation</li>
             <li>- Read button</li>
+            <li>- Set OpenAI temperature</li>
           </ul>
         </p>
       </div>
