@@ -134,19 +134,7 @@ export default function Home() {
       </div>
 
       <div className=" justify-center mt-auto mb-8">
-        <a
-          href="https://frenchezleo.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/public/logo.png"
-            alt="Frenchez Leo Logo"
-            width={50} // Adjust width as needed
-            height={25} // Adjust height as needed
-            priority
-          />{" "}
-        </a>
+        <Image src="/public/logo.png" alt="Frenchez Leo Logo" />
       </div>
     </div>
   );
