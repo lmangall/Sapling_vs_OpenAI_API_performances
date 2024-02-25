@@ -50,28 +50,6 @@ export default function Home() {
     }
   }
 
-  const Logo = () => (
-    <a href="https://frenchezleo.com" target="_blank" rel="noopener noreferrer">
-      <Image
-        src="/public/logo.png"
-        alt="Frenchez Leo Logo"
-        width={50} // Adjust width as needed
-        height={25} // Adjust height as needed
-        priority
-      />
-      <Image
-        src="/vercel.svg"
-        alt="Vercel Logo"
-        className="dark:invert"
-        width={100}
-        height={24}
-        priority
-      />
-    </a>
-  );
-
-  // No need for a separate handle click function for Sapling since it automatically observes and suggests corrections
-
   return (
     <div className="h-screen flex flex-col justify-center items-center">
       <div className="project-description-container mt-40">
@@ -154,7 +132,31 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className=" justify-center mt-auto mb-8">{Logo()}</div>
+      <div className=" justify-center mt-auto mb-8">
+        {Logo()}
+
+        <a
+          href="https://frenchezleo.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/public/logo.png"
+            alt="Frenchez Leo Logo"
+            width={50} // Adjust width as needed
+            height={25} // Adjust height as needed
+            priority
+          />
+          <Image
+            src="/vercel.svg"
+            alt="Vercel Logo"
+            className="dark:invert"
+            width={100}
+            height={24}
+            priority
+          />
+        </a>
+      </div>
     </div>
   );
 }
