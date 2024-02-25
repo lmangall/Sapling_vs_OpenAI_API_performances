@@ -57,6 +57,15 @@ export default function Home() {
         alt="Frenchez Leo Logo"
         width={50} // Adjust width as needed
         height={25} // Adjust height as needed
+        priority
+      />
+      <Image
+        src="/vercel.svg"
+        alt="Vercel Logo"
+        className="dark:invert"
+        width={100}
+        height={24}
+        priority
       />
     </a>
   );
