@@ -57,13 +57,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-4">API project one</h1>
         <p>
           This project utilizes AI technologies from OpenAI and Sapling to
-          correct grammar. Enhancements to implement:
-          <ul className="enhancement-list">
-            <li>- Click for word definition</li>
-            <li>- Correction explanation</li>
-            <li>- Read button</li>
-            <li>- Set OpenAI temperature</li>
-          </ul>
+          correct grammar.
         </p>
       </div>
       {/* Forms */}
