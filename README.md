@@ -188,3 +188,16 @@ https://nextjs.org/docs/pages/building-your-application/rendering
 - **Audience-specific detail:** Adapt the explanation's technical level based on your target audience.
 
 **I hope this explanation in code block format is helpful! Feel free to ask further questions.**
+
+
+.
+.
+.
+.
+.
+.
+possible enhancements:
+
+            <li>- Correction explanation</li>
+            <li>- Read button</li>
+            <li>- Set custom OpenAI temperature</li>
