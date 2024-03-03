@@ -1,3 +1,22 @@
+# OpenAI vs Sapling Comparison Tool
+
+This project served me as a one week introduction to webdev, while being useful for me as a professionnal in language teaching. The app compares the performance of both API for correcting errors in french texts. The  non-developer-friendly interface allows some of my colleagues (in the language teaching / translation) to easily compare the performance of OpenAI and Sapling APIs in correcting texts.
+
+[demo link](https://nextjs-boilerplate-lime-mu.vercel.app/)
+
+## Tech Stack
+
+| Technology   | Description                                                                  |
+|--------------|------------------------------------------------------------------------------|
+| **Node.js**  | A JavaScript runtime built on Chrome's V8 JavaScript engine.                 |
+| **Next.js**  | A React framework for production, enabling server-side rendering and static website generation. |
+| **JavaScript** | The scripting language used to create dynamic content on the web.             |
+| **React**    | A JavaScript library for building user interfaces.                           |
+| **Tailwind CSS** | A utility-first CSS framework for rapidly building custom designs.          |
+
+
+
+#Below are personnal notes
 ## Language APIs Resources:
 
 **Links for API related to languages:**
